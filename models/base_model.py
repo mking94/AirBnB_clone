@@ -8,8 +8,8 @@ class BaseModel:
     def __init__(self):
         """ Constructor """
         self.id = str(uuid4())
-        self.created_at = datetime.today().strftime("%b %d %Y %H:%M:%S")
-        self.updated_at = datetime.today().strftime("%b %d %Y %H:%M:%S")
+        self.created_at = datetime.today().strftime("%Y-%d-%m %H:%M:%S.%f")
+        self.updated_at = datetime.today().strftime("%Y-%d-%m %H:%M:%S.%f")
      def __str__(self):
         """Return string."""
         clname = self.__class__.__name__
