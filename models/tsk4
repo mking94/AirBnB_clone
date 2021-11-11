@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+class BaseModel:
+    """ Defin BaseModel class"""
+    def __init__(self,*args,**kwargs):
+        """ Constructor """
+        if(len(kwargs) == 0):
+            self.id = str(uuid4())
+            self.created_at = datetime.today().strftime('%Y, %m, %d %H:%M:%S.%f')
+            self.updated_at = datetime.today().strftime('%Y, %m, %d %H:%M:%S.%f')
+        else:
+            self.id = kwargs["id"]
+            self.created_at = datetime.strptime(kwargs["created_at"],'%Y, %m, %d %H:%M:%S.%f')
+            self.updated_at = datetime.strptime(kwargs["updated_at"],'%Y, %m, %d %H:%M:%S.%f')
+            for key in kwargs:
+                if key != "__class__":
+                    setattr(self,key,kwargs[key])
+     def __str__(self):
+        """Return string."""
+        clname = self.__class__.__name__
+        return "[{}] ({}) {}".format(clname, self.id, self.__dict__)
+     def save(self):
+        """Update updated_at with the current datetime."""
+        self.updated_at = datetime.today().strftime('%Y, %m, %d %H:%M:%S.%f')
+        models.storage.save()
