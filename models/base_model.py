@@ -3,8 +3,10 @@ import models
 from uuid import uuid4
 from datetime import datetime
 
+
 class BaseModel:
     """ Defin BaseModel class"""
+
     def __init__(self, *args, **kwargs):
         if(len(kwargs) == 0):
             self.id = str(uuid.uuid4())
