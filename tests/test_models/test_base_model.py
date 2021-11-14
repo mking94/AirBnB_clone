@@ -1,21 +1,3 @@
-
-youssefboussaid
-/
-AirBnB_clone
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-AirBnB_clone/tests/test_models/test_base_model.py
-@khouzi
-khouzi test fix
- 2 contributors
-181 lines (168 sloc)  5.57 KB
 #!/usr/bin/python3
 """
     Test Case For Base Model and its Test
