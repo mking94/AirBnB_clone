@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!usr/bin/python3
 """
 base model
 """
@@ -32,7 +32,7 @@ class BaseModel:
 
     def __str__(self):
         """
-        should print: [<class name>] (<self.id>) <self.__dict__>
+        str methode
         """
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id,
                                      self.__dict__)
@@ -49,8 +49,8 @@ class BaseModel:
         """
         returns a dictionary containing all keys/values of __dict__
         """
-        dct = dict(**self.__dict__)
-        dct['__class__'] = str(type(self).__name__)
-        dct['created_at'] = self.created_at.isoformat()
-        dct['updated_at'] = self.updated_at.isoformat()
-        return (dct)
+        d = dict(**self.__dict__)
+        d['__class__'] = str(type(self).__name__)
+        d['created_at'] = self.created_at.isoformat()
+        d['updated_at'] = self.updated_at.isoformat()
+        return (d)
